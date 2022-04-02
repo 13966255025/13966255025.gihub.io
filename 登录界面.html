@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录界面</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    html,body{
+        width: 100%;
+        height: 100%;
+    }
+
+    body{
+        background: linear-gradient(#132033 15%,#203a55 65%);
+        display: flex;
+    }
+
+    h1{
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .login{
+        width: 450px;
+        height: 430px;
+        background: #0d1520;
+        margin:auto;
+        box-shadow: 10px 10px 20px  #0d1520;
+    } 
+
+    .box{
+        display: flex;
+        flex-direction: column;
+        font-size:20px ;
+        width: 380px;
+        margin:  auto; 
+        margin-top: 50px;   
+        border-bottom: 1px solid white; 
+        position: relative;
+    }
+
+    .box label{
+        color: #46b3d4;
+        position:absolute;
+        left: 0;
+        top: -5px;
+        transition: all 0.5s;
+    }
+
+/* +兄弟选择器 */
+/* 在鼠标点击、鼠标滑过、非空验证通过的情况下执行以下内容 */
+    .box input:focus+label,.box:hover label,.box input:valid+label{
+        font-size: 16px;
+        top: -25px;
+        color: white;
+    }
+
+
+    .box input , input{
+        background: none ;
+        outline: none;
+        border: none;
+        color: white;
+        font-size: 16px;
+    }
+
+
+
+    .left{
+        width: 3px;
+        height: 60px;
+        left: 0;
+        top: 60px;
+        background: linear-gradient(#46b3d4, transparent);
+        animation: left 1s linear 0.25s infinite;
+    }
+    .top{
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(to left,#46b3d4, transparent);
+        left: -60px;
+        top: 0;
+        animation: top 1s linear 0.5s infinite;
+    }
+    .right{
+        width: 3px;
+        height: 60px;
+        background: linear-gradient( transparent,#46b3d4);
+        right: 0;
+        top: -60px;
+        animation: right 1s linear 0.75s infinite;
+
+    }
+    .bottom{
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(to right,#46b3d4, transparent);
+        bottom: 0;
+        right: -60px;
+        animation: bottom 1s linear infinite;
+    }
+
+    @keyframes left {
+
+        50%,100%{
+            top: -80px;
+        }
+        
+    }
+    
+    @keyframes top {
+
+        50%,100%{
+            left: 100px;
+        }
+        
+    }
+    
+    @keyframes right {
+
+        50%,100%{
+            top: 60px;
+        }
+        
+    }
+    
+    @keyframes bottom {
+
+        50%,100%{
+            right: 90px;
+        }
+        
+    }
+
+    .btn>span{
+        position: absolute;
+    }
+
+
+
+    .btn:hover{
+        background:#46b3d4 ;
+        border-radius: 5px;
+        color: white;
+        box-shadow: 0 0 5px 0 #46b3d4,
+        0 0 25px 0 #46b3d4,
+        0 0 50px 0 #46b3d4,
+        0 0 100px 0 #46b3d4
+        ;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+
+
+    .btn{
+        border: none;
+        background: none;
+        position: relative;
+        padding: 10px 15px;
+        left: 35px;
+        top: 40px;
+        font-size: 20px;
+        color:#46b3d4 ;
+        overflow: hidden;
+    }
+
+
+
+
+
+
+
+</style>
+<body>
+<div class="login">
+        <h1>Login</h1>
+    <form action="post" >
+        <div class="box" >
+              <input type="text"  id="Text"  required>
+            <label for="Text" >UserName</label>
+        </div>
+
+        <div class="box">
+             <input type="password" id="Password" required>
+            <label for="Password"  >PassWord</label>
+        </div>
+
+        <button class="btn">submit
+            <span class="left"></span>
+            <span class="top"></span>
+            <span class="right"></span>
+            <span class="bottom"></span>
+        </button>
+    </div>
+</form>
+</body>
+</html>
